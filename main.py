@@ -21,6 +21,4 @@ print('Beatmap set written to disc.')
 print('Extracting beatmap set.')
 subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
 
-print('Disposing of garbage.')
-os.rmdir('download')
-print('Garbage disposed.')
+print('Your beatmap sets have been installed.')
