@@ -10,7 +10,13 @@ response = requests.get(f'https://api.chimu.moe/v1/download/{set_id}?n=0', allow
 print(response.url)
 print('Beatmap set downloaded.')
 
-os.makedirs('download')
+try:
+    print('Creating download directory.')
+    os.makedirs('download')
+except FileExistsError:
+    print('Directory already exists.')
+else:
+    print('Created download directory.')
 
 print('Writing beatmap set to disc.')
 download_out = open(f"download/{set_id}.osz", "wb")
@@ -21,4 +27,5 @@ print('Beatmap set written to disc.')
 print('Extracting beatmap set.')
 subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
 
-print('Your beatmap sets have been installed.')
+print('Your beatmap sets should be installed.')
+print('If they were not please create an issue.')
