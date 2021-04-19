@@ -5,8 +5,11 @@ If you do test it in another operating system. Please create an issue telling me
 This utility contains Antromarsi's [osz_mcosu_converter](https://github.com/antomarsi/osz_mcosu_converter).
 It would not be possible without it.
 
-## Using on Linux.
-You must have Python 3 installed.
+## Linux
+### Requirments
+- [Python3](https://www.python.org/)
+- [requests](https://pypi.org/project/requests/)
+### How to?
 - Clone the repository from this github.
 - Cd into the directory where you cloned it to.
 - Run the main.py file.
