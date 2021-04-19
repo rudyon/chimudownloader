@@ -6,10 +6,10 @@ This utility contains Antromarsi's [osz_mcosu_converter](https://github.com/anto
 It would not be possible without it.
 
 ## Linux
-**Requirments**
+#### Requirments
 - [Python3](https://www.python.org/)
 - [requests](https://pypi.org/project/requests/)
-**How to?**
+#### How to?
 - Clone the repository from this github.
 - Cd into the directory where you cloned it to.
 - Run the main.py file.
