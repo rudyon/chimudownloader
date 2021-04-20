@@ -8,7 +8,6 @@ It would not be possible without it.
 ## Linux
 #### Requirments
 - [Python3](https://www.python.org/)
-- [requests](https://pypi.org/project/requests/)
 #### How to?
 - Clone the repository from this github.
 - Cd into the directory where you cloned it to.

@@ -1,31 +1,35 @@
 import requests
 import subprocess
 import os
+import json
 
-osu_directory = input('Osu directory location.\n-> ')
-set_id = input('ID of map to download.\n-> ')
+osu_directory = input('Where are your osu! files?\n-> ')
+search = input('Map to install?\n-> ')
 
-print('Downloading beatmap set.')
-response = requests.get(f'https://api.chimu.moe/v1/download/{set_id}?n=0', allow_redirects=True)
-print(response.url)
-print('Beatmap set downloaded.')
+response = requests.get(f'https://api.chimu.moe/v1/search?query={search}&amount=1')
+response_parsed = json.loads(response.content)
 
-try:
-    print('Creating download directory.')
-    os.makedirs('download')
-except FileExistsError:
-    print('Directory already exists.')
+if response_parsed['code'] == 106:
+    print('Beatmap not found.')
 else:
-    print('Created download directory.')
+    response_parsed = response_parsed.get('data')[0]
+    print(f"Found {response_parsed['Title']} - {response_parsed['Artist']} - {response_parsed['Creator']}.")
+    response = requests.get(f"https://api.chimu.moe/v1/download/{response_parsed['SetId']}?n=0", allow_redirects=True)
 
-print('Writing beatmap set to disc.')
-download_out = open(f"download/{set_id}.osz", "wb")
-download_out.write(response.content)
-download_out.close()
-print('Beatmap set written to disc.')
+    print('Attempting to create download directory.')
+    try:
+        os.makedirs('download')
+        print('Created download directory.')
+    except FileExistsError:
+        print('Directory already exists.')
 
-print('Extracting beatmap set.')
-subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
+    print('Downloading beatmap set.')
+    download_out = open(f"download/response_parsed['SetId'].osz", "wb")
+    download_out.write(response.content)
+    download_out.close()
+    print('Beatmap set downloaded.')
 
-print('Your beatmap sets should be installed.')
-print('If they were not please create an issue.')
+    print('Extracting beatmap set.')
+    subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
+
+    print('Done.')
