@@ -24,7 +24,7 @@ else:
         print('Directory already exists.')
 
     print('Downloading beatmap set.')
-    download_out = open(f"download/response_parsed['SetId'].osz", "wb")
+    download_out = open(f"download/{response_parsed['SetId']}.osz", "wb")
     download_out.write(response.content)
     download_out.close()
     print('Beatmap set downloaded.')
