@@ -6,9 +6,9 @@ This utility contains Antromarsi's [osz_mcosu_converter](https://github.com/anto
 It would not be possible without it.
 
 ## Linux
-#### Requirments
+### Requirments
 - [Python3](https://www.python.org/)
-#### How to?
+#### How to install an use?
 - Clone the repository from this github.
 - Cd into the directory where you cloned it to.
 - Run the main.py file.
@@ -17,3 +17,4 @@ git clone https://github.com/rudyon/mcosubeatmapmanager
 cd mcosubeatmapmanager/
 python3 main.py
 ```
+If you wish to bulk download put `,` in between map names.
