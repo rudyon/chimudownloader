@@ -2,8 +2,10 @@
 A command line beatmap downloader for [osu!](https://osu.ppy.sh).
 This was only tested on Linux. However it should work on all other operating systems as long as you have Python installed.
 If you do test it in another operating system. Please create an issue telling me.
-This utility contains Antromarsi's [osz_mcosu_converter](https://github.com/antomarsi/osz_mcosu_converter).
-It would not be possible without it.
+
+### Special Thanks to...
+- The [Chimu.moe](https://github.com/Chimu-moe/) team.
+- Antromarsi for creating [osz_mcosu_converter](https://github.com/antomarsi/osz_mcosu_converter).
 
 ## Linux
 ### Requirments
