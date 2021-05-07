@@ -18,27 +18,27 @@ if ',' in search:
 		response_parsed = json.loads(response.content)
 
 		if response_parsed['code'] == 106:
-		    print('Beatmap not found.')
+			print('Beatmap not found.')
 		else:
-		    response_parsed = response_parsed.get('data')[0]
-		    print(f"Found {response_parsed['Title']} - {response_parsed['Artist']} - {response_parsed['Creator']}.")
-		    response = requests.get(f"https://api.chimu.moe/v1/download/{response_parsed['SetId']}?n=0", allow_redirects=True)
+			response_parsed = response_parsed.get('data')[0]
+			print(f"Found {response_parsed['Title']} - {response_parsed['Artist']} - {response_parsed['Creator']}.")
+			response = requests.get(f"https://api.chimu.moe/v1/download/{response_parsed['SetId']}?n=0", allow_redirects=True)
 
-		    print('Attempting to create download directory.')
-		    try:
-		        os.makedirs('download')
-		        print('Created download directory.')
-		    except FileExistsError:
-		        print('Directory already exists.')
+			print('Attempting to create download directory.')
+			try:
+				os.makedirs('download')
+				print('Created download directory.')
+			except FileExistsError:
+				print('Directory already exists.')
 
-		    print('Downloading beatmap set.')
-		    download_out = open(f"download/{response_parsed['SetId']}.osz", "wb")
-		    download_out.write(response.content)
-		    download_out.close()
-		    print('Beatmap set downloaded.')
+			print('Downloading beatmap set.')
+			download_out = open(f"download/{response_parsed['SetId']}.osz", "wb")
+			download_out.write(response.content)
+			download_out.close()
+			print('Beatmap set downloaded.')
 
-		    print('Extracting beatmap set.')
-		    subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
+			print('Extracting beatmap set.')
+			subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
 
 	print('Done.')
 
@@ -47,26 +47,26 @@ else:
 	response_parsed = json.loads(response.content)
 
 	if response_parsed['code'] == 106:
-	    print('Beatmap not found.')
+		print('Beatmap not found.')
 	else:
-	    response_parsed = response_parsed.get('data')[0]
-	    print(f"Found {response_parsed['Title']} - {response_parsed['Artist']} - {response_parsed['Creator']}.")
-	    response = requests.get(f"https://api.chimu.moe/v1/download/{response_parsed['SetId']}?n=0", allow_redirects=True)
+		response_parsed = response_parsed.get('data')[0]
+		print(f"Found {response_parsed['Title']} - {response_parsed['Artist']} - {response_parsed['Creator']}.")
+		response = requests.get(f"https://api.chimu.moe/v1/download/{response_parsed['SetId']}?n=0", allow_redirects=True)
 
-	    print('Attempting to create download directory.')
-	    try:
-	        os.makedirs('download')
-	        print('Created download directory.')
-	    except FileExistsError:
-	        print('Directory already exists.')
+		print('Attempting to create download directory.')
+		try:
+			os.makedirs('download')
+			print('Created download directory.')
+		except FileExistsError:
+			print('Directory already exists.')
 
-	    print('Downloading beatmap set.')
-	    download_out = open(f"download/{response_parsed['SetId']}.osz", "wb")
-	    download_out.write(response.content)
-	    download_out.close()
-	    print('Beatmap set downloaded.')
+		print('Downloading beatmap set.')
+		download_out = open(f"download/{response_parsed['SetId']}.osz", "wb")
+		download_out.write(response.content)
+		download_out.close()
+		print('Beatmap set downloaded.')
 
-	    print('Extracting beatmap set.')
-	    subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
+		print('Extracting beatmap set.')
+		subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
 
-	    print('Done.')
+		print('Done.')
