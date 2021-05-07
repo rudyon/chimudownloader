@@ -14,6 +14,7 @@ if ',' in search:
 	for i in s:
 		search = i
 
+		# Searches for beatmaps on the chimu.moe database.
 		response = requests.get(f'https://api.chimu.moe/v1/search?query={search}&amount=1')
 		response_parsed = json.loads(response.content)
 
@@ -38,11 +39,13 @@ if ',' in search:
 			print('Beatmap set downloaded.')
 
 			print('Extracting beatmap set.')
+			# Calls to osz_converter.py and asks it to extract the beatmap file into the osu directory.
 			subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
 
 	print('Done.')
 
 else:
+	# Searches for beatmaps on the chimu.moe database.
 	response = requests.get(f'https://api.chimu.moe/v1/search?query={search}&amount=1')
 	response_parsed = json.loads(response.content)
 
@@ -66,6 +69,7 @@ else:
 		download_out.close()
 		print('Beatmap set downloaded.')
 
+		# Calls to osz_converter.py and asks it to extract the beatmap file into the osu directory.
 		print('Extracting beatmap set.')
 		subprocess.run(["python3", "osz_converter.py", "download", f"{osu_directory}/Songs"])
 
