@@ -12,7 +12,7 @@ If you do test it in another operating system. Please create an issue telling me
 - [Python3](https://www.python.org/)
 #### How to install an use?
 - Clone the repository from this github.
-- Cd into the directory where you cloned it to.
+- Go into the directory where you cloned it to.
 - Run the main.py file.
 ```
 git clone https://github.com/rudyon/chimudownloader
