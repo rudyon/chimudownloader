@@ -10,7 +10,7 @@ If you do test it in another operating system. Please create an issue telling me
 ## Linux
 ### Requirments
 - [Python3](https://www.python.org/)
-#### How to install an use?
+#### How to install and use?
 - Clone the repository from this github.
 - Go into the directory where you cloned it to.
 - Run the main.py file.
