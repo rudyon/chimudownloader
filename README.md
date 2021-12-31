@@ -7,7 +7,7 @@ If you do test it in another operating system. Please create an issue telling me
 - The [Chimu.moe](https://github.com/Chimu-moe/) team.
 - Antromarsi for creating [osz_mcosu_converter](https://github.com/antomarsi/osz_mcosu_converter).
 
-## Linux
+## Installation
 ### Requirments
 - [Python3](https://www.python.org/)
 - [requests](https://pypi.org/project/requests/)
