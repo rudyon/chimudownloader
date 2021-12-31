@@ -10,6 +10,7 @@ If you do test it in another operating system. Please create an issue telling me
 ## Linux
 ### Requirments
 - [Python3](https://www.python.org/)
+- [requests](https://pypi.org/project/requests/)
 #### How to install and use?
 - Clone the repository from this github.
 - Go into the directory where you cloned it to.
