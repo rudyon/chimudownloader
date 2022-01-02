@@ -9,7 +9,7 @@ If you do test it in another operating system. Please create an issue telling me
 
 ## Installation
 ### Requirments
-- [Python 3.X](https://www.python.org/downloads/)
+- [Python 3.x](https://www.python.org/downloads/)
 - [requests](https://pypi.org/project/requests/)
 #### How to install and use?
 - Clone the repository from this github.
