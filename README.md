@@ -11,7 +11,7 @@ If you do test it in another operating system. Please create an issue telling me
 ### Requirments
 - [Python 3.x](https://www.python.org/downloads/)
 - [requests](https://pypi.org/project/requests/)
-#### How to install and use?
+### How to install and use?
 - Clone the repository from this github.
 - Go into the directory where you cloned it to.
 - Run the main.py file.
